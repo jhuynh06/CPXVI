@@ -17,7 +17,7 @@ Start-DscConfiguration -Path .\Windows10Hardening  -Force -Verbose -Wait
 #>
 
 # Starting configuration
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+# [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Write-Host = 'Starting Configuration'
 Configuration Windows10Hardening {
   param (
@@ -395,7 +395,17 @@ Configuration Windows10Hardening {
       User_Account_Control_Virtualize_file_and_registry_write_failures_to_per_user_locations = 'Enabled'
     }
     
-    
+    #Audit Policies
+    AuditPolicySubcategory 'Audit Credential Validation (Success)' {
+            Name      = 'Credential Validation'
+            AuditFlag = 'Success'
+            Ensure    = 'Present'
+        }
+    AuditPolicySubcategory 'Audit Credential Validation (Failure)' {
+            Name      = 'Credential Validation'
+            AuditFlag = 'Failure'
+            Ensure    = 'Present'
+        }
     
   }
   
