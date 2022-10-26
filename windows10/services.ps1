@@ -30,7 +30,7 @@ Set-Service -Name "KeyIso" -StartupType Manual
 Set-Service -Name "EventSystem" -StartupType Automatic
 Set-Service -Name "COMSysApp" -StartupType Manual
 Set-Service -Name "Browser" -StartupType Manual
-Set-Service -Name "CDPSvc" -StartupType Automatic
+Set-Service -Name "CDPSvc" -StartupType AutomaticDelayedStart
 Set-Service -Name "CDPUserSvc_?????" -StartupType Automatic
 Set-Service -Name "DiagTrack" -StartupType Automatic
 Set-Service -Name "PimIndexMaintenanceSvc_?????" -StartupType Manual
@@ -40,7 +40,7 @@ Set-Service -Name "CryptSvc" -StartupType Automatic
 Set-Service -Name "DsSvc" -StartupType Manual
 Set-Service -Name "DusmSvc" -StartupType Automatic
 Set-Service -Name "DcomLaunch" -StartupType Automatic
-Set-Service -Name "DoSvc" -StartupType Automatic
+Set-Service -Name "DoSvc" -StartupType AutomaticDelayedStart
 Set-Service -Name "DeviceAssociationService" -StartupType Manual
 Set-Service -Name "DeviceInstall" -StartupType Manual
 Set-Service -Name "DmEnrollmentSvc" -StartupType Manual
@@ -166,7 +166,7 @@ Set-Service -Name "RpcEptMapper" -StartupType Automatic
 Set-Service -Name "seclogon" -StartupType Manual
 Set-Service -Name "SstpSvc" -StartupType Manual
 Set-Service -Name "SamSs" -StartupType Automatic
-Set-Service -Name "wscsvc" -StartupType Automatic
+Set-Service -Name "wscsvc" -StartupType AutomaticDelayedStart
 Set-Service -Name "SensorDataService" -StartupType Disabled 
 Set-Service -Name "SensrSvc" -StartupType Disabled 
 Set-Service -Name "SensorService" -StartupType Disabled 
@@ -179,7 +179,7 @@ Set-Service -Name "ScDeviceEnum" -StartupType Disabled
 Set-Service -Name "SCPolicySvc" -StartupType Disabled 
 Set-Service -Name "SNMP" -StartupType Not Installed
 Set-Service -Name "SNMPTRAP" -StartupType Disabled 
-Set-Service -Name "sppsvc" -StartupType Automatic
+Set-Service -Name "sppsvc" -StartupType AutomaticDelayedStart
 Set-Service -Name "SharedRealitySvc" -StartupType Manual
 Set-Service -Name "svsvc" -StartupType Manual
 Set-Service -Name "SSDPSRV" -StartupType Manual
@@ -188,10 +188,10 @@ Set-Service -Name "WiaRpc" -StartupType Manual
 Set-Service -Name "StorSvc" -StartupType Manual
 Set-Service -Name "TieringEngineService" -StartupType Manual
 Set-Service -Name "SysMain" -StartupType Automatic
-Set-Service -Name "OneSyncSvc_?????" -StartupType Automatic
+Set-Service -Name "OneSyncSvc_?????" -StartupType AutomaticDelayedStart
 Set-Service -Name "SENS" -StartupType Automatic
 Set-Service -Name "SystemEventsBroker" -StartupType Automatic
-Set-Service -Name "SgrmBroker" -StartupType Automatic
+Set-Service -Name "SgrmBroker" -StartupType AutomaticDelayedStart
 Set-Service -Name "Schedule" -StartupType Automatic
 Set-Service -Name "lmhosts" -StartupType Manual
 Set-Service -Name "TapiSrv" -StartupType Manual
@@ -247,7 +247,7 @@ Set-Service -Name "WpnService" -StartupType Automatic
 Set-Service -Name "WpnUserService_?????" -StartupType Automatic
 Set-Service -Name "PushToInstall" -StartupType Manual
 Set-Service -Name "WinRM" -StartupType Disabled 
-Set-Service -Name "WSearch" -StartupType Automatic
+Set-Service -Name "WSearch" -StartupType AutomaticDelayedStart
 Set-Service -Name "W32Time" -StartupType Manual
 Set-Service -Name "wuauserv" -StartupType Manual
 Set-Service -Name "WaaSMedicSvc" -StartupType Manual

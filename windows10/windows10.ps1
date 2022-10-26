@@ -395,18 +395,6 @@ Configuration Windows10Hardening {
       User_Account_Control_Virtualize_file_and_registry_write_failures_to_per_user_locations = 'Enabled'
     }
     
-    #Audit Policies
-    AuditPolicySubcategory 'Audit Credential Validation (Success)' {
-            Name      = 'Credential Validation'
-            AuditFlag = 'Success'
-            Ensure    = 'Present'
-        }
-    AuditPolicySubcategory 'Audit Credential Validation (Failure)' {
-            Name      = 'Credential Validation'
-            AuditFlag = 'Failure'
-            Ensure    = 'Present'
-        }
-    
   }
   
 }
