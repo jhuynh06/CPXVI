@@ -1,0 +1,42 @@
+#! /bin/bash
+
+#grab arguments
+help() {
+	echo "Options:"
+	echo "-d     Names of disabled scripts"
+	echo "-u     A path to a text file containing the user list"
+	exit 1
+}
+
+while getopts "d:u:" o; do
+	case "$o" in
+	d)
+		disabled="$OPTARG"
+		;;
+	u)
+		userlist="$OPTARG"
+		;;
+	*)
+		help
+		;;
+	esac
+done
+
+shift "$((OPTIND - 1))"
+
+declare -A scripts=(
+	["updater"]="./runners/update.sh"
+	["remove_root_ssh"]="./runners/ssh.sh"
+	["enable_firewall"]="./runners/firewall.sh"
+	["clean_naughty_files"]="./runners/cleaner.sh"
+	["user_parser"]="./runners/users.sh -eval $userlist"
+)
+
+for script_name in "${!scripts[@]}"; do
+	if [[ "$disabled" =~ $script_name ]]; then
+		echo "disabled $script_name"
+	else
+		echo "running $script_name"
+		eval "${scripts[$script_name]}"
+	fi
+done
