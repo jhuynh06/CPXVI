@@ -7,6 +7,7 @@ Install-Module -Name AuditPolicyDsc -Force -Confirm:$false
 Install-Module -Name SecurityPolicyDsc -Force -Confirm:$false
 Install-Module -Name NetworkingDsc -Force -Confirm:$false
 Install-Module -Name PSDesiredStateConfiguration -Force -Confirm:$false
+Install-Module -Name ActiveDirectory -Force -Confirm:$false
 
 # Setting Policies and Permissions
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
