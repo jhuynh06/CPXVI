@@ -8,5 +8,5 @@ Download Debian folder and run each script with these commands:
 1. ```chmod +x [filename]``` ex: ```chmod +x Asofwarem.sh```
 2. ```sudo ./[filename]```
 
-Make sure to open Terminal in the Debian folder, or move into the Debian folder using ```cd```.<br />
+Make sure to open Terminal in the Debian11 folder, or move into the Debian folder using ```cd```.<br />
 Add ```#!/usr/bin/env bash``` to top of ```.sh``` file if it doesn't run.
