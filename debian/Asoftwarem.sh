@@ -25,13 +25,13 @@ $root_pass
 sudo sysctl -w kernel.randomize_va_space=2
 sudo sysctl -w kernel.yama.ptrace_scope=1
 sudo prelink -ua
-sudo apt purge prelink
+sudo apt purge prelink -y
 
 # 1.4.5 congfiguring max logins
 grep maxlogins /etc/security/limits.conf | grep -v '^* hard maxlogins'
 sed -i -e '1i* hard maxlogins 10\' /etc/security/limits.conf
 # 1.4.6*
-sudo apt purge apport
+sudo apt purge apport -y
 sudo systemctl disable kdump.service
 echo "* hard core 0" >> /etc/security/limits.conf
 sudo sysctl -w fs.suid_dumpable=0
@@ -40,10 +40,10 @@ sudo systemctl daemon-reload
 sudo sysctl -w kernel.dmesg_restrict=1
 
 # 1.5.1
-sudo apt install apparmor apparmor-utils
+sudo apt install apparmor apparmor-utils -y
 grep -F "GRUB_CMDLINE_LINUX=" /etc/default/grub | sed -ie 's/$/& "apparmor=1 security=apparmor"/g'
 sudo update-grub
-sudo apt-get install apparmor
+sudo apt-get install apparmor -y
 sudo systemctl enable apparmor.service
 sudo systemctl start apparmor.service
 sudo aa-enforce /etc/apparmor.d/*
@@ -58,7 +58,7 @@ sudo chown root:root $(readlink -e /etc/issue.net)
 sudo chmod u-x,go-wx $(readlink -e /etc/issue.net)
 
 # 1.7.1
-sudo apt purge gdm3
+sudo apt purge gdm3 -y
 # [NOT CONFIGURED] 1.7.4-6
 # 1.7.7
 sudo gsettings set org.gnome.desktop.screensaver lock-enabled true
@@ -69,5 +69,5 @@ sudo sed -i "/\bEnable=true\b/d" myfile
 sudo echo "logout=''" >> /etc/dconf/db/local.d/*
 
 # 1.8.1
-sudo apt install vlock
-sudo apt-get install mcafeetp
+sudo apt install vlock -y
+sudo apt-get install mcafeetp -y
