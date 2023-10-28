@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "Configuring network secure policies"
 #----------------------------------------#
