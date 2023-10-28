@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Configuring services"
-#-----------------------#
+#-------------------------#
 sudo systemctl enable chrony.service
 sudo systemctl enable systemd-timesyncd.service
 sudo systemctl enable ntp.service
