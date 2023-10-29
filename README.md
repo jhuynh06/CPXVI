@@ -1,6 +1,10 @@
 # Windows 10
 
+## Local Policies
 When running the Windows 10 Local policy script, direct yourself to the **Windows 10/All Policy Scripts**. Download **the entire** folder. Run the **run.bat** file as an administrator, and all the local policies should be changed.
+
+## Remove Unwanted Administrators
+Download the **entire** folder of Windows10. From the CyberPatriot ReadMe, copy and paste **all names** that are administrators into the currentAdministrators.txt file. Run the **runAdminstrators.ps1** file as an administrator, following any directions that it says.
 
 # Debian
 
